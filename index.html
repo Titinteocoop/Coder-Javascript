@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pre entregable 2</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="./js/main.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <form id="coopForm">
+        <h2>Ingrese los datos de la Cooperativa</h2>
+        Nombre de la cooperativa:
+        <input
+          type="text"
+          id="coopName"
+          placeholder="Nombre de la Cooperativa"
+          required
+        />
+        Localidad:
+        <input type="text" id="coopLocation" placeholder="Localidad" required />
+        Fecha de Creación:
+        <input
+          type="text"
+          id="coopDate"
+          placeholder="Fecha de Creación (DD/MM/AAAA)"
+          required
+        />
+        <button type="submit">Agregar Cooperativa</button>
+      </form>
+
+      <form id="socieForm" style="display: none">
+        <h2>Ingrese los datos del Socie de <span id="coopActual"></span></h2>
+        Nombre del Socie:
+        <input
+          type="text"
+          id="socieName"
+          placeholder="Nombre del Socie"
+          required
+        />
+        Apellido del Socie:
+        <input
+          type="text"
+          id="socieSurname"
+          placeholder="Apellido del Socie"
+          required
+        />
+        Edad del Socie:
+        <input
+          type="number"
+          id="socieAge"
+          placeholder="Edad del Socie"
+          required
+        />
+
+        <label>
+          <p>Es socie fundador?</p>
+          <input type="checkbox" id="socieFounder" size="small" /> Si
+        </label>
+
+        <input
+          type="text"
+          id="socieRole"
+          placeholder="Rol del Socie"
+          required
+        />
+
+        <button type="button" id="addSocie">Agregar Socie</button>
+      </form>
+
+      <div id="anotherSocie" style="display: none">
+        <h3>
+          ¿Hay otro socie que ingresar en <span id="coopActualAnother"></span>?
+        </h3>
+        <button type="button" id="yesButton">Sí</button>
+        <button type="button" id="noButton">No</button>
+      </div>
+
+      <div id="confirmCloseCard" class="card" style="display: none">
+        <h3>¿Está seguro que desea cerrar la carga de la cooperativa?</h3>
+        <button type="button" id="confirmYesButton">Sí</button>
+        <button type="button" id="confirmNoButton">No</button>
+      </div>
+
+      <div id="coopCard" class="card">
+        <h3>Estadísticas de Cooperativa</h3>
+        <p id="totalCooperativas">Cantidad de Cooperativas Totales: 0</p>
+        <p id="totalSocies">Cantidad de Socies: 0</p>
+        <p id="totalFundadores">Cantidad de Socies Fundadores: 0</p>
+      </div>
+
+      <div id="coopList" class="card hidden">
+        <h3>Listado de Cooperativas</h3>
+        <ul id="coopListItems"></ul>
+      </div>
+    </div>
+  </body>
+</html>
